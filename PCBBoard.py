@@ -15,15 +15,15 @@ def loadData():
 
 def main():
     sett = loadData()
-    print(sett)
     boardWidth = int(sett[0][0])
     boardHeight = int(sett[0][1])
     points = []
     for i in range(1, len(sett)):
-        points.append(((int(sett[i][0]), int(sett[i][1])), (int(sett[i][2]), int(sett[i][3]))))
+        points.append(([int(sett[i][0]), int(sett[i][1])], [int(sett[i][2]), int(sett[i][3])]))
 
-    population = Population(1000, boardWidth, boardHeight, points)
-    print(population.points)
+    print(points)
+    population = Population(1, boardWidth, boardHeight, points)
+
 
 
 if __name__ == "__main__":
