@@ -18,19 +18,19 @@ class Solution:
     def fillPaths(self, points):
         betterDirectionProb = 0.8
         directions = [UP, DOWN, LEFT, RIGHT]
-        maxlength = max(self.boardHeight, self.boardWidth)
+        maxLength = max(self.boardHeight, self.boardWidth)
         for pair in points:
             startPoint = pair[0]
             endPoint = pair[1]
             currentPoint = startPoint
             previousDirection = directions[random.randint(0, 3)]
-            length = random.randint(1, maxlength)
+            length = random.randint(1, maxLength)
             currentPoint = [currentPoint[0] + length * previousDirection[0],
                             currentPoint[1] + length * previousDirection[1]]
             path = [currentPoint]
             print("end point: " + str(endPoint))
             while currentPoint != endPoint:
-                length = random.randint(1, maxlength)
+                length = random.randint(1, maxLength)
                 if random.randrange(0, 1) < betterDirectionProb:
                     direction = self.findBetterDirection(currentPoint, endPoint, directions, length)
                 else:
